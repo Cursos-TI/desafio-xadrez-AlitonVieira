@@ -1,35 +1,39 @@
 #include <stdio.h>
 
+void torre(int casas){
+    if (casas > 0){
+        printf("TORRE PARA DIREITA\n");
+        torre(casas - 1);
+    }
+}
+
+void rainha(int casas){
+    if (casas > 0){
+        printf("RAINHA PARA ESQUERDA\n");
+        rainha(casas - 1);
+    }
+}
+
+void bispo(int casas){
+    if (casas > 0){
+        printf("BISPO DIAGONAL DIREITA PARA CIMA\n");
+        bispo(casas - 1);
+    }
+}
+
 
 int main() {
 
     //criando movimentação da torre
-    for (int torre = 0; torre <= 4; torre++) //declarando for para movimentação da torre até 5 movimentos
-    {
-        printf("TORRE PARA DIREITA\n", torre); //imprimindo movimentos da torre
-    }
+    torre(5);
         printf("\n"); //criando espaço entre a impressão da movimentação das peças
 
     //criando movimentação da rainha
-    int rainha = 0;
-   
-    while (rainha <= 7)
-    {
-        printf("RAINHA PARA ESQUERDA\n", rainha); //imprimindo movimentação da rainha
-        rainha++; //evitando looping infinito
-    }
+    rainha(8);
         printf("\n"); //criando espaço entre a impressão da movimentação das peças
 
     //criando movimentação do bispo
-    int bispo = 0;
-
-    do
-    {
-        printf("BISPO PARA CIMA\n", bispo); //declaro movimento do bispo para cima
-        printf("BISPO PARA DIREITA\n", bispo); //declaro movimento do bispo para direita criando a diagonal
-        bispo++; //evitando looping infinito
-
-    } while (bispo <= 4);
+    bispo(5);
         printf("\n"); //criando espaço entre a impressão da movimentação das peças
 
     //criando movimentação do cavalo
@@ -39,9 +43,9 @@ int main() {
     {
         for(int cavalo = 0; cavalo < 2; cavalo++)
         {
-            printf("CAVALO PARA BAIXO\n"); //declaro movimento do cavalo par baixo 2x
+            printf("CAVALO PARA CIMA\n"); //declaro movimento do cavalo par cima 2x
         }
-        printf("CAVALO PARA ESQUERDA\n"); //declaro movimento do cavalo para esquerda
+        printf("CAVALO PARA DIREITA\n"); //declaro movimento do cavalo para direita
     }
     
     return 0;
